@@ -1,0 +1,5 @@
+eu\arrowhead\client\skeleton\common\util\ClientCommonConstants.class
+eu\arrowhead\client\skeleton\common\util\CoreServiceUri.class
+eu\arrowhead\client\skeleton\common\config\ApplicationInitListener.class
+eu\arrowhead\client\skeleton\common\ArrowheadService.class
+eu\arrowhead\client\skeleton\common\config\DefaultSecurityConfig.class
