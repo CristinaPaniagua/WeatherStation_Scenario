@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aitia.demo.dto.CarRequestDTO;
-import com.aitia.demo.dto.CarResponseDTO;
+
 
 
 import eu.arrowhead.common.exception.BadPayloadException;

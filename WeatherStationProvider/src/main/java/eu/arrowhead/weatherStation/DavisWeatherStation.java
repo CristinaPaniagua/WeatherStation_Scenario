@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.CoapServer;
 import org.eclipse.californium.core.coap.CoAP;
-import org.eclipse.californium.core.network.CoAPEndpoint;
+import org.eclipse.californium.core.network.CoapEndpoint;
 import org.eclipse.californium.core.network.EndpointManager;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 
@@ -26,6 +26,9 @@ class DavisWeatherStation extends CoapServer{
         
         
 	public DavisWeatherStation(DataListener provider) {
+            
+           
+            
 		CoapResource baseResource = new CoapResource("weatherstation");
 
 		resourceCollection.add(new IndoorTemperatureResource(provider));
@@ -51,7 +54,8 @@ class DavisWeatherStation extends CoapServer{
 	}
         
        public void addEndpoints() {
-       // for (InetAddress addr : EndpointManager.getEndpointManager().getNetworkInterfaces()) {
+       
+        /* //THIS CODE ONLY WORK WITH THE CALIFORNIUM CORE 1.0.1-M1 WHICH IS DEPRECATED
         InetAddress addr=EndpointManager.getEndpointManager().getNetworkInterfaces().iterator().next();
             // only binds to IPv4 addresses and localhost
             if (addr instanceof Inet4Address || addr.isLoopbackAddress()) {
@@ -61,6 +65,11 @@ class DavisWeatherStation extends CoapServer{
                 addEndpoint(new CoAPEndpoint(bindToAddress));
             
                 }
+            */
+        
+        // CODE WITH NEW VERSION 
+       
+        
     }
 
 }

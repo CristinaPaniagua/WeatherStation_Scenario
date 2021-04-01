@@ -2,9 +2,13 @@ package eu.arrowhead.weatherStation;
 
 
 import com.fazecast.jSerialComm.SerialPort;
+import java.net.InetSocketAddress;
 import java.util.Arrays;
 import java.util.List;
+import static java.util.function.IntUnaryOperator.identity;
 import java.util.stream.Collectors;
+import org.eclipse.californium.core.network.CoapEndpoint;
+import org.eclipse.californium.core.network.config.NetworkConfig;
 /**
  * 
  */
@@ -34,10 +38,16 @@ public class SerialReadByEvents  {
 		  System.out.println("Serial Port is open");
 	  }
 	  DataListener listener = new DataListener(serial);
+       
 	  serial.comPort.addDataListener(listener);
-          
+          //START COAP SERVER
 	  serial.station = new DavisWeatherStation(listener);
-	  serial.station.addEndpoints();
+          
+        
+	  CoapEndpoint.Builder tmp = new CoapEndpoint.Builder();
+          tmp.setPort(5555);
+          serial.station.addEndpoint(tmp.build());
+	  //serial.station.addEndpoints();
 	  serial.station.start();
 	  
 	  try {
