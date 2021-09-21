@@ -114,7 +114,7 @@ class OutdoorTemperatureResource extends CoapResource {
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		if(provider!=null) {
-			exchange.respond("[{\"bn\":\"urn:dev:mac:tbd\"},{\"n\":outdoortemperature,\"v\":" + provider.getOutdoorTemperatureIndegC() + ",\"u\":\"degC\"}]");
+			exchange.respond("[{\"n\":\"outdoortemperature\",\"v\":" + provider.getOutdoorTemperatureIndegC() + ",\"u\":\"degC\"}]");
 		} else {
 			exchange.respond("nak - provider not available");
 		}
@@ -136,7 +136,7 @@ class IndoorHumidityResource extends CoapResource {
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		if(provider!=null) {
-			exchange.respond("[{\"bn\":\"urn:dev:mac:tbd\"},{\"n\":indoorhumidity,\"v\":" + provider.getIndoorHumidity() + ",\"u\":\"%RH\"}]");
+			exchange.respond("[{\"n\":\"indoorhumidity\",\"v\":" + provider.getIndoorHumidity() + ",\"u\":\"%RH\"}]");
 		} else {
 			exchange.respond("nak - provider not available");
 		}
@@ -159,7 +159,7 @@ class OutdoorHumidityResource extends CoapResource {
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		if(provider!=null) {
-			exchange.respond("[{\"bn\":\"urn:dev:mac:tbd\"},{\"n\":outdoorhumidity,\"v\":" + provider.getOutdoorHumidity() + ",\"u\":\"%RH\"}]");
+			exchange.respond("[{\"n\":\"outdoorhumidity\",\"v\":" + provider.getOutdoorHumidity() + ",\"u\":\"%RH\"}]");
 		} else {
 			exchange.respond("nak - provider not available");
 		}
@@ -180,7 +180,7 @@ class WindSpeedResource extends CoapResource {
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		if(provider!=null) {
-			exchange.respond("[{\"bn\":\"urn:dev:mac:tbd\"},{\"n\":windspeed,\"v\":" + provider.getWindspeed() + ",\"u\":\"m/s\"}]");
+			exchange.respond("[{\"n\":\"windspeed\",\"v\":" + provider.getWindspeed() + ",\"u\":\"m/s\"}]");
 		} else {
 			exchange.respond("nak - provider not available");
 		}
@@ -202,7 +202,7 @@ class SolarRadiationResource extends CoapResource {
 	@Override
 	public void handleGET(CoapExchange exchange) {
 		if(provider!=null) {
-			exchange.respond("[{\"bn\":\"urn:dev:mac:tbd\"},{\"n\":\"solar\",\"v\":" + provider.getSolar() + ",\"u\":\"w/m2\"}]");
+			exchange.respond("[{\"n\":\"solar\",\"v\":" + provider.getSolar() + ",\"u\":\"w/m2\"}]");
 		} else {
 			exchange.respond("nak - provider not available");
 		}
